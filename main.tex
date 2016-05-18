@@ -7,6 +7,47 @@
 \usepackage{amsmath,amsfonts,graphicx}
 \usepackage{../beamerleanprogress}
 
+%% The AMS-LaTeX extensions for mathematical typesetting.  Do not
+%% remove.
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+\setcounter{MaxMatrixCols}{20}
+
+%% Use PGFplots
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+%\usepgfplotslibrary{external}
+%\tikzexternalize
+
+%% LaTeX' own graphics handling
+\usepackage{graphicx}
+\graphicspath{{../images/}, {../diagrams/}}
+
+%% Allow subfigures
+\usepackage{subcaption}
+\expandafter\def\csname ver@subfig.sty\endcsname{}
+
+%% Allow \includesvg
+%% NOTE: Requires flag --shell-escape
+\usepackage{svg}
+\setsvg{inkscape = inkscape -z -D} % Export drawing area
+\setsvg{svgpath = ../diagrams/}
+
+%% Allow text wrapping around floating figures
+\usepackage{wrapfig}
+
+%% Add more padding to table cells
+\renewcommand{\arraystretch}{1.2}
+
+%% Paths to search for .tex files in
+\makeatletter
+\def\input@path{{../}{../include/}}
+\makeatother
+
+\usepackage{ETHlogo}
+%% This allows you to add .pdf files. It is used to add the
+%% declaration of originality.
+\usepackage{pdfpages}
 
 \title
   [Automatic Indoor Modelling\hspace{2em}]
@@ -20,7 +61,10 @@
   {April 01, 2011}
 
 \institute
-  {Computer Vision and Geometr\\ETH Zurich}
+  [CVG ETH]{Computer Vision and Geometry\\ETH Zurich}
+
+\logo
+  {\ETHlogo[0.5in]}
 
 
 \begin{document}
@@ -44,8 +88,7 @@
 
 
 
-\section
-  {Main Body}
+\section{Main Body}
 
 \begin{frame}
   {Equations}
